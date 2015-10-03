@@ -1,0 +1,41 @@
+/**
+ * Exercício 3 da PL3
+ * Este exercício lê uma sequência de números inteiros e termina quando a
+ * quantidade de números pares for igual à de ímpares ou quando já tiverem sido
+ * lidos 100 números. No final mostra a média dos pares e a percentagem dos
+ * ímpares lidos.
+ *
+ * @author Tiago Leite (1150780)
+ * @date   03/10/2015
+ */
+
+ED
+  num, pares, quantPares, somaPares, impares, quantPares inteiro
+ALG
+INÍCIO
+  // Inicializa as variáveis
+  pares = 0
+  somaPares = 0
+  impares = 0
+  media = 0
+
+  Repete
+    // Lê o número inserido pelo utilizador
+    Ler(num)
+
+    // Verifica se é par ou impar
+    Se (num MOD 2 == 0)
+      Então
+        pares = pares + 1
+        quantPares = quantPares + 1
+        somaPares = somaPares + num
+      Senão
+        impares = impares + 1
+        quantImpares = impares + 1
+    FimSe
+  Enquanto ((quantPares + quantImpares) < 100)) e (quantPares != quantImpares)
+
+  // Output
+  Escrever("A média dos números pares é:", somaPares / quantPares)
+  Escrever("A percentagem de números ímpares é de: ", (quantImpares / (quantImpares + quantPares)) * 100, "%")
+FIM

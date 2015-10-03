@@ -5,4 +5,4 @@ Resolução dos exercícios da Unidade Curricular "Algoritmia e Programação" (
 ## Note for international/Erasmus students
 These exercises were resolved based on their Portuguese version, therefore variables, output and many of the documentation are also in Portuguese.
 
-© [Tiago Leite](https://tiagoanleite.github.io) Tiago Leite, 2015
+© [Tiago Leite](https://tiagoanleite.github.io), 2015

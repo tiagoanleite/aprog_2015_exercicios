@@ -1,0 +1,33 @@
+/**
+ * Exercício 6 da PL3
+ * Este exercício lê número positivos até que a soma destes seja superior a um
+ * número dado pelo utilizador. Antes de terminar mostra o menor. Revisto e
+ * aguardando validação.
+ *
+ * @author Tiago Leite (1150780)
+ * @date   30/09/2015
+ */
+
+ED
+  soma, limite, num, menor inteiro
+ALG
+INÍCIO
+  Ler(limite)
+  soma = 0
+  Ler(num)
+  Se (num > 0)
+    Então
+      menor = num
+        Repete
+          soma = soma + num
+          Se (menor > num)
+            Então
+              menor = num
+          FimSe
+          Repete
+            Ler(num)
+          Enquanto(num < 1)
+        Enquanto (soma <= limite)
+        Escrever("O menor número é: ", menor)
+  FimSe
+FIM

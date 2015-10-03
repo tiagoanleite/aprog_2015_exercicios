@@ -1,5 +1,5 @@
 /**
- * Exercício 9 da PL1
+ * Exercício 9 da PL2
  * Este exercício permite determinar a que horas um certo comboio chega da sua
  * viagem e se chega no dia seguinte com base na hora de partida e tempo de
  * viagem. Validado pelo prof.
@@ -43,7 +43,7 @@ INICIO
 			FimSe
 
 			// Indica a hora de chegada
-			Escrever("Chega às", fimHoras, ":", fimMinutos)
+			Escrever("Chega às ", fimHoras, ":", fimMinutos)
 		Senão
 			Escrever("A viagem não pode ser superior a 24h")
 	FimSe

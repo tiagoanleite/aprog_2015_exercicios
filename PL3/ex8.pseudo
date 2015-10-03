@@ -1,0 +1,38 @@
+/**
+ * Exercício 8 da PL3
+ * Este exercício determina o salário dos funcionários de uma determinada
+ * empresa com base no salário base e horas extras. Revisto e aguardando
+ * validação.
+ *
+ * @author Tiago Leite (1150780)
+ * @date   30/09/2015
+ */
+
+ED
+  contador int
+  media, horas, salario real
+ALG
+INÍCIO
+  contador = 0
+  media = 0
+  Repete
+    Ler(horas)
+  Enquanto (horas != -1) ou (horas < 0)
+  Enquanto (horas != -1)
+    Repete
+      Ler(salario)
+    Enquanto (salario < 0)
+    salario = salario + horas * (salario * 0.02)
+    media = media + salario
+    contador = contador + 1
+    Escrever("Este empregado irá receber: ", salario)
+    Repete
+      Ler(horas)
+    Enquanto (horas != -1) ou (horas < 0)
+  FimEnquanto
+  Se (contador > 0)
+    Então
+      media = media / contador
+  FimSe
+  Escreve("A média dos salários é: ", media)
+FIM

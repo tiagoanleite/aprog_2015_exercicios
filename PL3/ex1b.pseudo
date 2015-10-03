@@ -1,0 +1,29 @@
+/**
+ * Exercício 1b da PL3
+ * Este exercício calcula o factorial de qualquer número inteiro positivo
+ * inserido pelo utilizador. Revisto e aguardando validação.
+ *
+ * @author Tiago Leite (1150780)
+ * @date   30/09/2015
+ */
+
+ // Analise-o e deduza a funcionalidade.
+ // Este algoritmo calcula o factorial de um número.
+
+ED
+  res, num, x inteiro
+ALG
+INÍCIO
+  Ler(num)
+  Enquanto (num > 0) fazer
+    res = 1
+    Para (x = num até 1 passo -1) fazer
+      res = res * x
+    FimPara
+    Escrever("O resultado é: ", res)
+    Ler(num)
+  FimEnquanto
+FIM
+
+// Tem garantias que este algoritmo é finito?
+// Sim porque é interrompido quando é inserido 0 ou um número negativo.

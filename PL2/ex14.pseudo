@@ -1,5 +1,5 @@
 /**
- * Exercício 14 da PL1
+ * Exercício 14 da PL2
  * Este exercício permite determinar o número de pintores necessários e o custo
  * final de uma obra com base no preço e rendimento da tinta, salário dos
  * pintores e área da obra. Validado pelo prof.
@@ -58,8 +58,8 @@ INICIO
 			custoPintores = diasTrabalho * pintores * salario
 
 			// Output
-			Escrever("Custo da mão de obra:", custoPintores)
-			Escrever("Custo da tinta utilizada:", custoTinta)
-			Escrever("Custo total:", custoTinta + custoPintores)
+			Escrever("Custo da mão de obra: ", custoPintores)
+			Escrever("Custo da tinta utilizada: ", custoTinta)
+			Escrever("Custo total: ", custoTinta + custoPintores)
 	FimSe
 FIM

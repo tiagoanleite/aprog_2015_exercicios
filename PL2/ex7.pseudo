@@ -1,0 +1,43 @@
+/**
+ * Exercício 7 da PL1
+ * Este exercício permite avaliar uma turma em função da percentagem de alunos
+ * aprovados, sendo que os limites de cada avaliação são inseridos pelo
+ * utilizador. Validado pelo prof.
+ *
+ * @author Tiago Leite (1150780)
+ * @date   28/10/2015
+ */
+
+ED
+  aprovados, limiteMa, limitaFraca, limiteRazoavel, limiteBoa REAL
+ALG
+INICIO
+	LER(aprovados)
+	LER(limiteMa, limiteFraca, limiteRazoavel, limiteBoa)
+	SE (aprovados <0 OU aprovados >1)
+		ENTÃO
+			ESCREVER(“Valor Inválido”)
+		SENÃO
+			SE (aprovados <= limiteMa)
+				ENTÃO
+					ESCREVER(“Turma Má”)
+				SENÃO
+					SE (aprovados <= limiteFraca)
+						ENTÃO
+							ESCREVER(“Turma Fraca”)
+						SENÃO
+							SE (aprovados <= limiteRazoavel)
+								ENTÃO
+									ESCREVER(“Turma Razoável”)
+								SENÃO
+									SE (aprovados <= limiteBoa)
+									ENTÃO
+										ESCREVER(“Turma Boa”)
+									SENÃO
+										ESCREVER(“Turma Excelente”)
+									FIMSE
+							FIMSE
+					FIMSE
+			FIMSE
+	FIMSE
+FIM

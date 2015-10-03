@@ -1,0 +1,65 @@
+/**
+ * Exercício 14 da PL1
+ * Este exercício permite determinar o número de pintores necessários e o custo
+ * final de uma obra com base no preço e rendimento da tinta, salário dos
+ * pintores e área da obra. Validado pelo prof.
+ *
+ * @author Tiago Leite (1150780)
+ * @date   28/10/2015
+ */
+
+ED
+	area, rendimentoTinta, precoTinta, custoTinta, salario, custoPintores, horasTrabalho REAL
+	pintores, diasTrabalho INTEIRO
+ALG
+INICIO
+	// Recebe as informações
+	Ler(area, rendimentoTinta, precoTinta, salario)
+
+	// Verifica se não recebe dados negativos
+	Se (area < 0) OU (rendimentoTinta < 0) ou (precoTinta < 0) ou (salario < 0)
+		Então
+			Escrever("Erro: Inseriu um dado negativo.")
+		Senão
+			// Verifica o número de pintores necessário
+			Se (area < 100)
+				Então
+					pintores = 1
+				Senão
+					Se (area < 300)
+						Então
+							pintores = 2
+						Senão
+							Se (area < 1000)
+								Então
+									pintores = 3
+								Senão
+									pintores = 4
+							FimSe
+					FimSe
+			FimSe
+
+			// Descobre quando gasta em tinta
+			custoTinta = (area / rendimentoTinta) * precoTinta
+
+			// Número de horas para pintar
+			horasTrabalho = area/2;
+
+			// Dias de cada pintor
+			diasTrabalho = (horasTrabalho/pintores) DIV 8;
+
+			// Verifica se passa das 8 horas para precisar de mais um dia
+			Se ((horasTrabalho MOD 8) > 0)
+				Então
+					diasTrabalho = diasTrabalho + 1
+			FimSe
+
+			// Custo mão de obra
+			custoPintores = diasTrabalho * pintores * salario
+
+			// Output
+			Escrever("Custo da mão de obra:", custoPintores)
+			Escrever("Custo da tinta utilizada:", custoTinta)
+			Escrever("Custo total:", custoTinta + custoPintores)
+	FimSe
+FIM

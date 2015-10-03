@@ -1,0 +1,50 @@
+/**
+ * Exercício 9 da PL1
+ * Este exercício permite determinar a que horas um certo comboio chega da sua
+ * viagem e se chega no dia seguinte com base na hora de partida e tempo de
+ * viagem. Validado pelo prof.
+ *
+ * @author Tiago Leite (1150780)
+ * @date   28/10/2015
+ */
+
+ED
+	inicioHoras, inicioMinutos, viagemHoras, viagemMinutos, fimHoras, fimMinutos INTEIRO
+ALG
+INICIO
+	// Lê as horas de início e a duração da viagem
+	Ler(inicioHoras, inicioMinutos)
+	Ler(viagemHoras, viagemMinutos)
+
+	// O enunciado diz que não há viagens > 24h
+	Se (viagemHoras < 24)
+		Então
+			// Soma às horas e aos minutos as horas e minutos de viagem
+			fimHoras = inicioHoras + viagemHoras
+			fimMinutos = inicioMinutos + viagemMinutos
+
+			//Se o resultado da soma dos minutos for > 60
+			Se (fimMinutos > 60)
+				Então
+					// Converte os minutos em horas
+					fimHoras = fimHoras + (fimMinutos DIV 60)
+					// Retira os minutos em excesso
+					fimMinutos = fimMinutos MOD 60
+			FimSe
+
+			// Verifica se as horas de chegada não passa as 24
+			Se ((fimHoras MOD 24) > 0)
+				Então
+					Escrever("Chega no dia seguinte.")
+					// Acerta o número de horas (uma vez que não passa de 24h podia ser simplesmente fimHoras + 1)
+					fimHoras = fimHoras MOD 24
+				Senão
+					Escrever("Chega no mesmo dia.")
+			FimSe
+
+			// Indica a hora de chegada
+			Escrever("Chega às", fimHoras, ":", fimMinutos)
+		Senão
+			Escrever("A viagem não pode ser superior a 24h")
+	FimSe
+FIM
